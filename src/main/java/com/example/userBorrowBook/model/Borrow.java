@@ -24,4 +24,6 @@ public class Borrow {
     private LocalDate returnDate;
     private boolean isReturned;
     private int points;
+
+    // let s create a relationship between UserApp and Borrow
 }
