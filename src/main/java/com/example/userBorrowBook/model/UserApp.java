@@ -30,4 +30,8 @@ public class UserApp {
     private String address;
     private boolean isArchived;
     private LocalDate dob;
+
+    // let s relation book with user many to many
+    // with join table and bidirectional: the owner will be user
+    //
 }
