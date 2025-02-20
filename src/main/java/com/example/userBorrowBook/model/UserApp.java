@@ -30,4 +30,8 @@ public class UserApp {
     private String address;
     private boolean isArchived;
     private LocalDate dob;
+
+    // let s relation userApp and Book many to many
+    // with join table userApp_Book, unidirectional
+    // with the owner of the relation is Book
 }
