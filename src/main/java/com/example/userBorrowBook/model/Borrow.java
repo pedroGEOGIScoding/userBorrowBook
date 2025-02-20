@@ -25,5 +25,9 @@ public class Borrow {
     private boolean isReturned;
     private int points;
 
-    // let s create a relationship between UserApp and Borrow
+    // let s create a relationship between UserApp and Borrow: one to many
+    // let s create a relationship between Book and Borrow: one to many
+
+    // in this case the relationship will be bidirectional
+    // and the owner will be the Borrow entity
 }
