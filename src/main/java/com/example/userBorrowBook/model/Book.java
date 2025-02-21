@@ -29,4 +29,8 @@ public class Book {
     private int pagesQty;
     private boolean available;
     private LocalDate publicationDate;
+
+    // In this class since this is a unidirectional relationship
+    // we do not need to add the foreign key in the Book class
+    // neither the object UerApp
 }
