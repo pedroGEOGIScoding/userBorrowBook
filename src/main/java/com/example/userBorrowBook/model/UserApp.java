@@ -1,15 +1,14 @@
 package com.example.userBorrowBook.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -31,7 +30,10 @@ public class UserApp {
     private boolean isArchived;
     private LocalDate dob;
 
-    // let s relation book with user many to many
-    // with join table and bidirectional: the owner will be user
-    //
+    @JsonIgnore
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable ( name = "USERAPP_BOOK_JOINTABLE" ,
+            joinColumns = @JoinColumn ( name = "USERAPP_ID_FK" ) ,
+            inverseJoinColumns = @JoinColumn ( name = "BOOK_ID_FK" ) )
+    private List<Book> books;
 }

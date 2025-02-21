@@ -1,15 +1,13 @@
 package com.example.userBorrowBook.model;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -29,4 +27,7 @@ public class Book {
     private int pagesQty;
     private boolean available;
     private LocalDate publicationDate;
+
+    @ManyToMany (mappedBy = "books", fetch = FetchType.EAGER)
+    private List<UserApp> userApps;
 }
