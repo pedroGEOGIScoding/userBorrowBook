@@ -25,8 +25,13 @@ public class Borrow {
     private boolean isReturned;
     private int points;
 
-    // let s create a relationship between UserApp and Borrow: one to many
-    // let s create a relationship between Book and Borrow: one to many
-    // it will be unidirectional relationship and the owner will be Borrow
+    // Unidirectional relationship with UserApp
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private UserApp user;
 
+    // Unidirectional relationship with Book
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "book_id", nullable = false)
+    private Book book;
 }
