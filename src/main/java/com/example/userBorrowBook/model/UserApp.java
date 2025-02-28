@@ -5,12 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-
+import jakarta.persistence.*;
 import java.time.LocalDate;
-import java.util.UUID;
 
 @Entity
 @Data
@@ -30,4 +26,10 @@ public class UserApp {
     private String address;
     private boolean isArchived;
     private LocalDate dob;
+
+    // One-to-One relationship with Book
+    // UserApp is the owner of the relationship
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "book_id", referencedColumnName = "id")
+    private Book book;
 }
