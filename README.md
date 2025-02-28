@@ -89,5 +89,8 @@ We're working with six different H2 databases to explore various JPA relationshi
 6. **userBorrowBook Database** (`userBorrowBook.db.mv`)
    - This is the default database with no relationship, just 3 entities no related yet.
 
+![image](https://github.com/user-attachments/assets/568e1fca-779c-4805-aaed-abf0781d727c)
+
+
 
 
